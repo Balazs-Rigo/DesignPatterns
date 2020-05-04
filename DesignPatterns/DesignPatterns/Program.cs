@@ -1,6 +1,7 @@
 ﻿using System;
 using DesignPatterns.Memento;
 using DesignPatterns.Memento.Exercise;
+using DesignPatterns.State;
 
 namespace DesignPatterns
 {
@@ -9,6 +10,7 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
             #region memento
+            /*
             var editor = new Editor();
             var history = new History();
 
@@ -41,6 +43,15 @@ namespace DesignPatterns
             Console.WriteLine(document);
             document.Restore(historyDoc.Pop());
             Console.WriteLine(document);
+            */
+            #endregion
+
+            #region state
+
+            var canvas = new Canvas();
+            canvas.SetCurrentTool(new SelectionTool());
+            canvas.MouseDown();
+            canvas.MouseUp();
 
             #endregion
         }
