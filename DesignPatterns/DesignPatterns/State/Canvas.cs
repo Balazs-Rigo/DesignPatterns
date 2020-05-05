@@ -6,7 +6,7 @@ namespace DesignPatterns.State
 {
     public class Canvas
     {
-        private Tool currentTool;
+        private ITool currentTool;
 
         public void MouseDown()
         {
@@ -18,12 +18,12 @@ namespace DesignPatterns.State
             currentTool.MouseUp();
         }
 
-        public Tool GetCurrentTool()
+        public ITool GetCurrentTool()
         {
             return currentTool;
         }
 
-        public void SetCurrentTool(Tool currentTool)
+        public void SetCurrentTool(ITool currentTool)
         {
             this.currentTool = currentTool;
         }
