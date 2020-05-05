@@ -2,6 +2,7 @@
 using DesignPatterns.Memento;
 using DesignPatterns.Memento.Exercise;
 using DesignPatterns.State;
+using DesignPatterns.State.Exercise;
 
 namespace DesignPatterns
 {
@@ -52,6 +53,13 @@ namespace DesignPatterns
             canvas.SetCurrentTool(new SelectionTool());
             canvas.MouseDown();
             canvas.MouseUp();
+
+            //state Execrice
+
+            DirectionService service = new DirectionService(new Walking());
+
+            service.getEta();
+            service.GetDirection();
 
             #endregion
         }
