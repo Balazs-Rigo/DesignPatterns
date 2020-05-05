@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.State
 {
-    class EraserTool : Tool
+    class EraserTool : ITool
     {
         public void MouseDown()
         {

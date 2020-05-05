@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.State
 {
-    class SelectionTool : Tool
+    class SelectionTool : ITool
     {
         public void MouseDown()
         {

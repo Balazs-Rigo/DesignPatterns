@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.State
 {
-    public interface Tool
+    public interface ITool
     {
         void MouseDown();
         void MouseUp();
