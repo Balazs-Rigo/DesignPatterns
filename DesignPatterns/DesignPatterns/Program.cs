@@ -4,6 +4,7 @@ using DesignPatterns.Memento;
 using DesignPatterns.Memento.Exercise;
 using DesignPatterns.State;
 using DesignPatterns.State.Exercise;
+using DesignPatterns.Strategy;
 
 namespace DesignPatterns
 {
@@ -65,7 +66,7 @@ namespace DesignPatterns
             #endregion
 
             #region iterator
-
+            /*
             var history = new BrowseHistory();
 
             history.Push("a");
@@ -78,9 +79,16 @@ namespace DesignPatterns
                 var url = iterator.current();
                 Console.WriteLine(url);
                 iterator.next();
-            }
+            }           
+    */
+            #endregion
 
-           
+            #region Strategy
+
+            var imageStorage = new ImageStorage();
+
+            imageStorage.Store("a",new JpegCompressor(), new BlackAndWhiteFilter());
+            imageStorage.Store("b",new PngCompressor(), new BlackAndWhiteFilter());
 
             #endregion
         }
