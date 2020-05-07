@@ -1,4 +1,5 @@
 ﻿using System;
+using DesignPatterns.Iterator;
 using DesignPatterns.Memento;
 using DesignPatterns.Memento.Exercise;
 using DesignPatterns.State;
@@ -48,7 +49,7 @@ namespace DesignPatterns
             #endregion
 
             #region state
-
+            /*
             var canvas = new Canvas();
             canvas.SetCurrentTool(new SelectionTool());
             canvas.MouseDown();
@@ -60,6 +61,26 @@ namespace DesignPatterns
 
             service.getEta();
             service.GetDirection();
+            */
+            #endregion
+
+            #region iterator
+
+            var history = new BrowseHistory();
+
+            history.Push("a");
+            history.Push("c");
+            history.Push("b");
+
+            DesignPatterns.Iterator.Iterator iterator = history.CreateIterator();
+            while (iterator.hasNext())
+            {
+                var url = iterator.current();
+                Console.WriteLine(url);
+                iterator.next();
+            }
+
+           
 
             #endregion
         }
