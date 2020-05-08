@@ -5,6 +5,7 @@ using DesignPatterns.Memento.Exercise;
 using DesignPatterns.State;
 using DesignPatterns.State.Exercise;
 using DesignPatterns.Strategy;
+using DesignPatterns.Template;
 
 namespace DesignPatterns
 {
@@ -84,11 +85,18 @@ namespace DesignPatterns
             #endregion
 
             #region Strategy
-
+            /*
             var imageStorage = new ImageStorage();
 
             imageStorage.Store("a",new JpegCompressor(), new BlackAndWhiteFilter());
             imageStorage.Store("b",new PngCompressor(), new BlackAndWhiteFilter());
+            */
+            #endregion
+
+            #region template
+
+            var task = new TransferMoneyTask();
+            task.Execute();
 
             #endregion
         }
