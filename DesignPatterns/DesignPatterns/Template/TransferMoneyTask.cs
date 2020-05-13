@@ -6,7 +6,7 @@ namespace DesignPatterns.Template
 {
     public class TransferMoneyTask : Task
     {
-        public override void DoExecute()
+        protected override void DoExecute()
         {
             Console.WriteLine("Transfer Money!");
         }

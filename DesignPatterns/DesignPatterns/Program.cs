@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
+using DesignPatterns.Command;
+using DesignPatterns.Command.editor;
+using DesignPatterns.Command.fx;
 using DesignPatterns.Iterator;
 using DesignPatterns.Memento;
 using DesignPatterns.Memento.Exercise;
@@ -94,9 +98,40 @@ namespace DesignPatterns
             #endregion
 
             #region template
-
+            /*
             var task = new TransferMoneyTask();
             task.Execute();
+            */
+            #endregion
+
+            #region Command
+
+            var service = new CustomerService();
+            var command = new AddCustomerCommand(service);
+            var button = new Button(command);
+            button.Click();
+
+            var composite = new CompositeCommand();
+            composite.Add(new BlackAndWhiteCommand());
+            composite.Add(new ResizeCommand());
+            composite.Execute();
+            composite.Execute();
+
+            var history = new Command.editor.History();
+            var document = new HtmlDocument();
+            document.SetContent("HTML-es dokumentes istenfasza");
+
+            var boldCommand = new BoldCommand(document, history);
+
+            boldCommand.Execute();
+            Console.WriteLine(document.getContent());
+
+            var undoCommand = new UndoCommand(history);
+
+            undoCommand.Execute();
+            Console.WriteLine(document.getContent());
+            undoCommand.Execute();
+
 
             #endregion
         }
