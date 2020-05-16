@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using DesignPatterns.Command;
 using DesignPatterns.Command.editor;
 using DesignPatterns.Command.fx;
 using DesignPatterns.Iterator;
 using DesignPatterns.Memento;
 using DesignPatterns.Memento.Exercise;
+using DesignPatterns.Observer;
 using DesignPatterns.State;
 using DesignPatterns.State.Exercise;
 using DesignPatterns.Strategy;
@@ -105,7 +107,7 @@ namespace DesignPatterns
             #endregion
 
             #region Command
-
+            /*
             var service = new CustomerService();
             var command = new AddCustomerCommand(service);
             var button = new Button(command);
@@ -132,7 +134,20 @@ namespace DesignPatterns
             Console.WriteLine(document.getContent());
             undoCommand.Execute();
 
+            */
+            #endregion
 
+            #region Observer
+            var dataSource = new DataSource();
+            var sheet1 = new SpreadSheet(dataSource);
+            var sheet2 = new SpreadSheet(dataSource);
+            var chart = new Chart(dataSource);
+
+            dataSource.AddObserver(sheet1);
+            dataSource.AddObserver(sheet2);
+            dataSource.AddObserver(chart);
+
+            dataSource.SetValue(1);
             #endregion
         }
     }
