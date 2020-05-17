@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using DesignPatterns.ChainOfResponsibility;
 using DesignPatterns.Command;
 using DesignPatterns.Command.editor;
 using DesignPatterns.Command.fx;
@@ -138,6 +139,7 @@ namespace DesignPatterns
             #endregion
 
             #region Observer
+            /*
             var dataSource = new DataSource();
             var sheet1 = new SpreadSheet(dataSource);
             var sheet2 = new SpreadSheet(dataSource);
@@ -148,6 +150,18 @@ namespace DesignPatterns
             dataSource.AddObserver(chart);
 
             dataSource.SetValue(1);
+            */
+            #endregion
+
+            #region ChainOfResponisbility
+
+            var compression = new Compressor(null);
+            var logger = new Logger(compression);
+            var authentication = new Authenticator(logger);
+            var server = new WebServer(authentication);
+
+
+            server.Handle(new HttpRequest("admin", "1234"));
             #endregion
         }
     }
