@@ -13,6 +13,8 @@ using DesignPatterns.State;
 using DesignPatterns.State.Exercise;
 using DesignPatterns.Strategy;
 using DesignPatterns.Template;
+using DesignPatterns.Visitor;
+using HtmlDocument = DesignPatterns.Visitor.HtmlDocument;
 
 namespace DesignPatterns
 {
@@ -154,7 +156,7 @@ namespace DesignPatterns
             #endregion
 
             #region ChainOfResponisbility
-
+            /*
             var compression = new Compressor(null);
             var logger = new Logger(compression);
             var authentication = new Authenticator(logger);
@@ -162,6 +164,17 @@ namespace DesignPatterns
 
 
             server.Handle(new HttpRequest("admin", "1234"));
+            */
+            #endregion
+
+            #region visitor
+            var document = new HtmlDocument();
+            document.Add(new HeadingNode());
+            document.Add(new AnchorNode());
+            document.Execute(new HighlightOperation());
+            document.Execute(new PlaintextOperation());
+
+
             #endregion
         }
     }
