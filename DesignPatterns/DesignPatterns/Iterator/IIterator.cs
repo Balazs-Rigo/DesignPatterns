@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.Iterator
 {
-    public interface Iterator
+    public interface IIterator
     {
         bool hasNext();
         string current();

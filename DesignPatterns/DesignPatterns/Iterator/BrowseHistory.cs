@@ -20,12 +20,12 @@ namespace DesignPatterns.Iterator
             return urls[--count];
         }
 
-        public Iterator CreateIterator()
+        public IIterator CreateIterator()
         {
             return new ArrayIterator(this);
         }
 
-        public class ArrayIterator : Iterator
+        public class ArrayIterator : IIterator
         {
             private BrowseHistory history;
             private int index;

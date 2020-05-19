@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.Visitor
 {
-    public interface Operation
+    public interface IOperation
     {
         void Apply(HeadingNode heading);
         void Apply(AnchorNode anchor);

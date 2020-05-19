@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.Visitor
 {
-    public class PlaintextOperation : Operation
+    public class PlaintextOperation : IOperation
     {
         public void Apply(HeadingNode heading)
         {

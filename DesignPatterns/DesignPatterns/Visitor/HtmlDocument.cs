@@ -1,21 +1,20 @@
 ﻿using System.Collections.Generic;
 
 using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace DesignPatterns.Visitor
 {
     public class HtmlDocument
     {
-        private List<HtmlNode> nodes = new List<HtmlNode>();
+        private List<IHtmlNode> nodes = new List<IHtmlNode>();
 
-        public void Add(HtmlNode node)
+        public void Add(IHtmlNode node)
         {
             nodes.Add(node);
         }
 
-        public void Execute(Operation operation)
+        public void Execute(IOperation operation)
         {
             foreach (var node in nodes)
             {

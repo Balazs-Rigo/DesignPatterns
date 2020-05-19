@@ -4,9 +4,9 @@ using System.Text;
 
 namespace DesignPatterns.Visitor
 {
-    public class AnchorNode : HtmlNode
+    public class AnchorNode : IHtmlNode
     {
-        public void Execute(Operation operation)
+        public void Execute(IOperation operation)
         {
             operation.Apply(this);
         }

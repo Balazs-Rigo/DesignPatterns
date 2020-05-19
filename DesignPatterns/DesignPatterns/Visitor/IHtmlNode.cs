@@ -4,8 +4,8 @@ using System.Text;
 
 namespace DesignPatterns.Visitor
 {
-    public interface HtmlNode
+    public interface IHtmlNode
     {
-        void Execute(Operation operation);
+        void Execute(IOperation operation);
     }
 }
