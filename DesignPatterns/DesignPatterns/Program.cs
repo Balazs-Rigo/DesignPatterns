@@ -13,6 +13,7 @@ using DesignPatterns.State;
 using DesignPatterns.State.Exercise;
 using DesignPatterns.Strategy;
 using DesignPatterns.Template;
+using DesignPatterns.Template.Exercise;
 using DesignPatterns.Visitor;
 using HtmlDocument = DesignPatterns.Visitor.HtmlDocument;
 
@@ -104,8 +105,12 @@ namespace DesignPatterns
 
             #region template
             /*
-            var task = new TransferMoneyTask();
-            task.Execute();
+            //var task = new TransferMoneyTask();
+            //task.Execute();
+
+            //exercise template code
+            ChatWindow window = new ChatWindow();
+            window.Close();
             */
             #endregion
 
@@ -168,13 +173,13 @@ namespace DesignPatterns
             #endregion
 
             #region visitor
+            /*
             var document = new HtmlDocument();
             document.Add(new HeadingNode());
             document.Add(new AnchorNode());
             document.Execute(new HighlightOperation());
             document.Execute(new PlaintextOperation());
-
-
+            */
             #endregion
         }
     }
