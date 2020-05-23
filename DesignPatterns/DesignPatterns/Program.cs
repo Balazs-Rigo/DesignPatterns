@@ -9,6 +9,7 @@ using DesignPatterns.Iterator;
 using DesignPatterns.Memento;
 using DesignPatterns.Memento.Exercise;
 using DesignPatterns.Observer;
+using DesignPatterns.Observer.Exercise;
 using DesignPatterns.State;
 using DesignPatterns.State.Exercise;
 using DesignPatterns.Strategy;
@@ -158,6 +159,20 @@ namespace DesignPatterns
 
             dataSource.SetValue(1);
             */
+
+            StatusBar statusBar = new StatusBar();
+            StockListView stockListView = new StockListView();
+            Stock stock1 = new Stock("stock1", 10.0f);
+            Stock stock2 = new Stock("stock2", 30.0f);
+            Stock stock3 = new Stock("stock3", 30.0f);
+
+            statusBar.AddStock(stock1);
+            statusBar.AddStock(stock2);
+            stockListView.AddStock(stock1);
+            stockListView.AddStock(stock2);
+            stockListView.AddStock(stock3);
+            stock2.SetPrice(21.0f);
+            stock3.SetPrice(9.0f);
             #endregion
 
             #region ChainOfResponisbility
