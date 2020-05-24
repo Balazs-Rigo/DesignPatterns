@@ -6,6 +6,8 @@ using DesignPatterns.ChainOfResponsibility.Exercise;
 using DesignPatterns.Command;
 using DesignPatterns.Command.editor;
 using DesignPatterns.Command.fx;
+using DesignPatterns.Composite;
+using DesignPatterns.Composite.Exercise;
 using DesignPatterns.Iterator;
 using DesignPatterns.Memento;
 using DesignPatterns.Memento.Exercise;
@@ -216,11 +218,48 @@ namespace DesignPatterns
             */
 
             //exercise
-
+            /*
             WavFile wavFile = WavFile.Read("myfile.wav");
             wavFile.ApplyFilter(new NoiseReductionFilter());
             wavFile.ApplyFilter(new ReverbFilter());
             wavFile.ApplyFilter(new NormalizeFilter());
+            */
+            #endregion
+
+            #region composite
+
+            var group1 = new Group();
+            group1.Add(new Shape());
+            group1.Add(new Shape());
+
+            var group2 = new Group();
+            group2.Add(new Shape());
+            group2.Add(new Shape());
+
+            var group = new Group();
+            group.Add(group1);
+            group.Add(group2);
+            group.Render();
+            group.Move();
+
+            //Exercise
+
+            var subTeam1 = new Team();
+            subTeam1.Add(new Truck());
+            subTeam1.Add(new HumanResource());
+            subTeam1.Add(new HumanResource());
+
+            var subTeam2 = new Team();
+            subTeam2.Add(new Truck());
+            subTeam2.Add(new HumanResource());
+            subTeam2.Add(new HumanResource());
+
+            var team = new Team();
+            team.Add(subTeam1);
+            team.Add(subTeam2);
+
+            team.Deploy();
+
             #endregion
         }
     }
