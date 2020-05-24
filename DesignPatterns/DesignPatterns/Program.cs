@@ -160,6 +160,9 @@ namespace DesignPatterns
             dataSource.SetValue(1);
             */
 
+            //Exercise
+
+            /*
             StatusBar statusBar = new StatusBar();
             StockListView stockListView = new StockListView();
             Stock stock1 = new Stock("stock1", 10.0f);
@@ -173,6 +176,11 @@ namespace DesignPatterns
             stockListView.AddStock(stock3);
             stock2.SetPrice(21.0f);
             stock3.SetPrice(9.0f);
+            */
+            #endregion
+
+            #region Mediator
+
             #endregion
 
             #region ChainOfResponisbility
