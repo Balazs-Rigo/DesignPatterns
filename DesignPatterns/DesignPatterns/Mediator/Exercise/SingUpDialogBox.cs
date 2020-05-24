@@ -13,20 +13,20 @@ namespace DesignPatterns.Mediator.Exercise
 
         public SingUpDialogBox()
         {
-
+            //this.usernameTextBox.AddEventHandler();
         }
 
-        private void controlChanged()
+        private void ControlChanged()
         {
-            this.signUpButton.SetEnabled(this.isFormValid());
+            this.signUpButton.SetEnabled(this.IsFormValid());
         }
 
-        private bool isFormValid()
+        private bool IsFormValid()
         {
             return !this.usernameTextBox.IsEmpty() && !this.passwordTextBox.IsEmpty() && !this.agreeToTermsCheckBox.IsChecked();
         }
 
-        public void simulateUserInteraction()
+        public void SimulateUserInteraction()
         {
             Console.WriteLine("Initially: " + this.signUpButton.IsEnabled());
             this.usernameTextBox.SetContent("username");

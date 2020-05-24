@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using DesignPatterns.ChainOfResponsibility;
+using DesignPatterns.ChainOfResponsibility.Exercise;
 using DesignPatterns.Command;
 using DesignPatterns.Command.editor;
 using DesignPatterns.Command.fx;
@@ -193,6 +194,14 @@ namespace DesignPatterns
 
             server.Handle(new HttpRequest("admin", "1234"));
             */
+
+            //exercise
+
+            DataReader reader = DataReaderFactory.GetDataReaderChain();
+            reader.Read("data.xls");
+            reader.Read("data.numbers");
+            reader.Read("data.qbw");
+            // reader.Read("data.jpg");
             #endregion
 
             #region visitor
