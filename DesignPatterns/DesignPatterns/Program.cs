@@ -17,6 +17,7 @@ using DesignPatterns.Strategy;
 using DesignPatterns.Template;
 using DesignPatterns.Template.Exercise;
 using DesignPatterns.Visitor;
+using DesignPatterns.Visitor.Exercise;
 using HtmlDocument = DesignPatterns.Visitor.HtmlDocument;
 
 namespace DesignPatterns
@@ -196,12 +197,13 @@ namespace DesignPatterns
             */
 
             //exercise
-
+            /*
             DataReader reader = DataReaderFactory.GetDataReaderChain();
             reader.Read("data.xls");
             reader.Read("data.numbers");
             reader.Read("data.qbw");
             // reader.Read("data.jpg");
+            */
             #endregion
 
             #region visitor
@@ -212,6 +214,13 @@ namespace DesignPatterns
             document.Execute(new HighlightOperation());
             document.Execute(new PlaintextOperation());
             */
+
+            //exercise
+
+            WavFile wavFile = WavFile.Read("myfile.wav");
+            wavFile.ApplyFilter(new NoiseReductionFilter());
+            wavFile.ApplyFilter(new ReverbFilter());
+            wavFile.ApplyFilter(new NormalizeFilter());
             #endregion
         }
     }
