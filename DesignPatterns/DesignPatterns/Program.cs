@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using DesignPatterns.Adapter;
+using DesignPatterns.Adapter.avaFilter;
+using DesignPatterns.Adapter.Exercise;
 using DesignPatterns.ChainOfResponsibility;
 using DesignPatterns.ChainOfResponsibility.Exercise;
 using DesignPatterns.Command;
@@ -227,7 +231,7 @@ namespace DesignPatterns
             #endregion
 
             #region composite
-
+            /*
             var group1 = new Group();
             group1.Add(new Shape());
             group1.Add(new Shape());
@@ -259,6 +263,18 @@ namespace DesignPatterns
             team.Add(subTeam2);
 
             team.Deploy();
+            */
+            #endregion
+
+            #region adapter
+
+            //var imageView = new ImageView(new Image());
+            //imageView.Apply(new CaramelFilter(new Caramel()));
+
+            //Exercise
+            var client = new EmailClient();
+            client.AddProvider(new GmailAdapter());
+            client.DownloadEmails();
 
             #endregion
         }
