@@ -2,6 +2,7 @@
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using DesignPatterns.Adapter;
 using DesignPatterns.Adapter.avaFilter;
 using DesignPatterns.Adapter.Exercise;
@@ -12,6 +13,8 @@ using DesignPatterns.Command.editor;
 using DesignPatterns.Command.fx;
 using DesignPatterns.Composite;
 using DesignPatterns.Composite.Exercise;
+using DesignPatterns.Decorator;
+using DesignPatterns.Decorator.Exercise;
 using DesignPatterns.Iterator;
 using DesignPatterns.Memento;
 using DesignPatterns.Memento.Exercise;
@@ -24,6 +27,7 @@ using DesignPatterns.Template;
 using DesignPatterns.Template.Exercise;
 using DesignPatterns.Visitor;
 using DesignPatterns.Visitor.Exercise;
+using Editor = DesignPatterns.Decorator.Exercise.Editor;
 using HtmlDocument = DesignPatterns.Visitor.HtmlDocument;
 
 namespace DesignPatterns
@@ -267,7 +271,7 @@ namespace DesignPatterns
             #endregion
 
             #region adapter
-
+            /*
             //var imageView = new ImageView(new Image());
             //imageView.Apply(new CaramelFilter(new Caramel()));
 
@@ -275,8 +279,23 @@ namespace DesignPatterns
             var client = new EmailClient();
             client.AddProvider(new GmailAdapter());
             client.DownloadEmails();
+            */
+            #endregion
+
+            #region Decorator
+
+            StoreCreditCard(new EncryptedCloudStream(new CloudStream()));
+
+            //Exercise
+            var editor = new Editor();
+            editor.openProject("....");
 
             #endregion
+        }
+
+        public static void StoreCreditCard(IStream stream)
+        {
+            stream.Write("1234-4342-1200-0012");
         }
     }
 }
