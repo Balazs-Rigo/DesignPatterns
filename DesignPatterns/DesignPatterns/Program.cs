@@ -15,6 +15,7 @@ using DesignPatterns.Composite;
 using DesignPatterns.Composite.Exercise;
 using DesignPatterns.Decorator;
 using DesignPatterns.Decorator.Exercise;
+using DesignPatterns.Facade.Exercise;
 using DesignPatterns.Iterator;
 using DesignPatterns.Memento;
 using DesignPatterns.Memento.Exercise;
@@ -283,13 +284,18 @@ namespace DesignPatterns
             #endregion
 
             #region Decorator
-
+            /*
             StoreCreditCard(new EncryptedCloudStream(new CloudStream()));
 
             //Exercise
             var editor = new Editor();
             editor.openProject("....");
+            */
+            #endregion
 
+            #region Facade
+            var twitterAPI = new TwitterAPI("appKey","secret");
+            var tweets = twitterAPI.GetRecentTweets();
             #endregion
         }
 
