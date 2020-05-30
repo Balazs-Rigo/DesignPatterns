@@ -16,6 +16,7 @@ using DesignPatterns.Composite.Exercise;
 using DesignPatterns.Decorator;
 using DesignPatterns.Decorator.Exercise;
 using DesignPatterns.Facade.Exercise;
+using DesignPatterns.Flyweight;
 using DesignPatterns.Iterator;
 using DesignPatterns.Memento;
 using DesignPatterns.Memento.Exercise;
@@ -294,8 +295,20 @@ namespace DesignPatterns
             #endregion
 
             #region Facade
+            /*
             var twitterAPI = new TwitterAPI("appKey","secret");
             var tweets = twitterAPI.GetRecentTweets();
+            */
+            #endregion
+
+            #region Fylweight
+
+            var service = new PointService(new PointIconFactory());
+            foreach (var point in service.GetPoints())
+            {
+                point.Draw();
+            }
+          
             #endregion
         }
 
