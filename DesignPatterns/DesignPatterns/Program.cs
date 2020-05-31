@@ -6,6 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using DesignPatterns.Adapter;
 using DesignPatterns.Adapter.avaFilter;
 using DesignPatterns.Adapter.Exercise;
+using DesignPatterns.Bridge;
 using DesignPatterns.ChainOfResponsibility;
 using DesignPatterns.ChainOfResponsibility.Exercise;
 using DesignPatterns.Command;
@@ -302,13 +303,18 @@ namespace DesignPatterns
             #endregion
 
             #region Fylweight
-
+            /*
             var service = new PointService(new PointIconFactory());
             foreach (var point in service.GetPoints())
             {
                 point.Draw();
             }
-          
+             */
+            #endregion
+
+            #region Bridge
+            var remoteControl = new AdvancedRemoteControl(new SamsungTV());
+            remoteControl.TurnOn();
             #endregion
         }
 
