@@ -23,6 +23,8 @@ using DesignPatterns.Memento;
 using DesignPatterns.Memento.Exercise;
 using DesignPatterns.Observer;
 using DesignPatterns.Observer.Exercise;
+using DesignPatterns.Proxy;
+using DesignPatterns.Proxy.Exercise;
 using DesignPatterns.State;
 using DesignPatterns.State.Exercise;
 using DesignPatterns.Strategy;
@@ -313,8 +315,32 @@ namespace DesignPatterns
             #endregion
 
             #region Bridge
+            /*
             var remoteControl = new AdvancedRemoteControl(new SamsungTV());
             remoteControl.TurnOn();
+            */
+            #endregion
+
+            #region Proxy
+
+            var library = new Library();
+            string[] fileNames = {"a","b","c" };
+            foreach (var fileName in fileNames)
+                library.Add(new LoggingEbookProxy(fileName));
+
+            library.openEbook("a");
+            library.openEbook("b");
+
+            //exercise
+
+            var dbContext = new DbContext();
+            var product = dbContext.GetProduct(1);
+            product.SetName("updated name");
+            dbContext.SaveChanges();
+
+            product.SetName("Another name");
+            dbContext.SaveChanges();
+
             #endregion
         }
 
